@@ -1,0 +1,227 @@
+/* Under 720px, it forces the dashboard to be end-to-end of the width of the screen, and for other elements such as the events and classes, it barely touches the sides of the screens.*/
+body {
+    margin: 0;
+    font-family: Times New Roman;
+    font-weight: 500;
+    letter-spacing: -0.5px; 
+    background-image: url(assets/background2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.dashboard {
+    color: white;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(95, 95, 95, 50);
+    background-color: rgb(227, 84, 54, 0.3);
+}
+
+.date {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.greeting {
+    font-size: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.greetingname {
+    font-style: italic;
+}
+
+.reminders {
+    margin-top: 5px;
+    display: flex;
+}
+
+.deadline, .events {
+    width: 50%;
+}
+
+.title {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content {
+    display: flex;
+    margin-top: 15px;
+}
+
+.classesct {
+    width: 60%;
+    gap: 10px;
+}
+
+.eventsct {
+    width: 40%;
+}
+
+.classitem {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.classname {
+    background-color: #e35336;
+    padding: 10px;
+    padding-top: 50px;
+    font-size: 28px;
+    font-style: italic;
+}
+
+.classaction {
+    display: flex;
+    gap: 2%;
+}
+
+.classrd, .classrs {
+    background-color: #98412f;
+    width: 49%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.eventbody {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E35436;
+    text-decoration: none;
+    color: white;
+}
+
+.eventtitle {
+    text-align: center;
+    font-size: 18px;
+}
+
+.eventitems {
+    list-style-type: none;
+    padding: 0px;
+
+}
+
+.eventitems li {
+    margin-bottom: 10px;
+}
+
+/* The code below is the highlight that glows around a section when it's called.*/
+.section-highlight {
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.5);
+    border: 2px solid #ffa500;
+    transform: scale(1.02);
+    transition: all 0.4s ease-in-out;
+    z-index: 10;
+}
+
+.eventbody, .classesct {
+    transition: box-shadow 0.4s ease-in-out, 
+                transform 0.4s ease-in-out, 
+                border 0.4s ease-in-out;
+}
+
+/* The code below ensures that the loading overlay gets to fade out properly.*/
+#fadeOverlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 50;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: opacity 1.2s ease-out, visibility 1.2s;
+}
+
+#fadeOverlay.fadeOut {
+    opacity: 0;
+}
+
+.splashLogo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.loaderText {
+    width: 100px;
+    height: auto;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* At 720px, the dashboard, classes, and events have some spacing between the sides of the screen to adjust for the larger layout of the screen. Text is also enlarged for readability.*/
+@media screen and (min-width: 720px) {
+    body {
+        font-size: 18px;
+    }
+
+    .dashboard {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .content {
+        margin-left: 10%;
+        margin-right: 10%;
+        gap: 10px;
+    }
+
+
+    .classitem, .eventbody {
+        margin: 0px;
+    }
+
+    .classitem {
+        margin-bottom: 10px;
+    }
+
+    .classrd, .classrs {
+        font-size: 16px;
+    }
+
+    .greeting {
+        font-size: 50px;
+    }
+
+    .eventtitle {
+        font-size: 20px;
+    }
+}
+
+/* AT 1024px, all elements get a little bit tighter, as desktop screens become larger, leaving enough space as to not overwhelm the user. By reducing size of everything, it gives a modern layout to it.*/
+@media screen and (min-width: 1024px) {
+     body {
+        font-size: 16px;
+    }
+
+    .dashboard {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .content {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .classrd, .classrs {
+        font-size: 18px;
+    }
+
+    .eventtitle {
+        font-size: 22px;
+    }
+}

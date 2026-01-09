@@ -1,0 +1,76 @@
+/* In general, the styling of the navbar below 720px makes it so that its compressed to fit only a few pixels around.*/
+nav {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: auto;
+    height: 25px;
+}
+
+nav .sidenav {
+    display: flex;
+    gap: 20px;
+}
+
+nav .logo,
+nav .sidenav {
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    background-color: #E35436;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.nav-item {
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+/* Reaching 720px, the width and gap between icons are adjusted to better accomodate bigger screens by widening.*/
+@media screen and (min-width: 720px) {
+    nav ul {
+        width: 50%;
+    }
+
+    nav .sidenav {
+        gap: 30px;
+    }
+}
+
+/* At 1024px, the navbar actually gets smaller as to not overwhelm the screen, while also changing the spacing to be tighter.*/
+@media screen and (min-width: 1024px) {
+    nav {
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    nav ul {
+        width: 30%;
+    }
+
+    nav .logo, nav .sidenav {
+        width: auto;
+    }
+
+}

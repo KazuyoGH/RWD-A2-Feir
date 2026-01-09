@@ -1,0 +1,53 @@
+/* This code designs the index/login page, which holds the glass-like registration box.*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(assets/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Times New Roman;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.reg {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(95, 95, 95, 0.5);
+}
+
+.reg * {
+    margin: 5px;
+
+}
+
+.reg .submit,
+.reg input {
+    width: 210px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.reg img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.reg form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footnote {
+    position: absolute;
+    bottom: 5px;
+}

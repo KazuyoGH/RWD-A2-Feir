@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logo.svg">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <link rel="stylesheet" href="homestyle.css" type="text/css">
+    <title>Augur Portal</title>
+</head>
+
+<body>
+    <!-- The fade overlay being on top makes sure that it goes above everything else on the page.-->
+    <div id="fadeOverlay">
+        <div class="loaderContent">
+            <img src="assets/logo.svg" class="splashLogo">
+            <p class="loaderText">Loading your dashboard...</p>
+        </div>
+    </div>
+    <nav>
+        <img class="logo" src="assets/logo.svg">
+        <ul>
+            <img id="navClasses" class="nav-item" src="assets/icons/classes.svg">
+            <img id="navHome" class="nav-item active" src="assets/icons/home.svg">
+            <img id="navEvents" class="nav-item" src="assets/icons/events.svg">
+        </ul>
+        <div class="sidenav">
+            <a href="index.html">
+                <img class="logout" src="assets/icons/logout.svg">
+            </a>
+        </div>
+    </nav>
+
+    <!-- The divs both in dashboard and content are empty, and are to be filled by the javascript from the information by MonggoDB.-->
+    <div class="dashboard">
+        <div class="date"></div>
+        <div class="greeting">
+            <div class="greetingtime"></div>
+            <div class="greetingname"></div>
+        </div>
+        <div class="reminders">
+            <div class="deadline">
+                <div class="title">Latest Deadline:</div>
+                <div class="deadlineDB"></div>
+            </div>
+            <div class="events">
+                <div class="title">Upcoming Event:</div>
+                <div class="eventsDB"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="content">
+        <div class="classesct"></div>
+        <div class="eventsct">
+            <div class="eventbody">
+                <div class="eventtitle">Events List</div>
+                <ul class="eventitems"></ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- The code below makes sure that both the javascript and external data from day.js is imported into the website.-->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/advancedFormat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
